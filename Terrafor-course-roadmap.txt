@@ -1,0 +1,314 @@
+🌱 PHASE 1: Foundations (Beginner Level)
+🎯 Goal: Understand Terraform basics and workflow
+📘 Concepts to Learn
+
+What is Infrastructure as Code (IaC)
+
+Why Terraform (vs CloudFormation, Ansible, etc.)
+
+Terraform architecture:
+
+Providers
+
+State files
+
+Execution plans
+
+Modules and backends
+
+Terraform commands (init, plan, apply, destroy)
+
+File structure: .tf, .tfvars, terraform.tfstate, .terraform.lock.hcl
+
+Resource syntax and arguments
+
+Data sources
+
+Variables and outputs
+
+🧪 Hands-on Labs
+
+Install Terraform
+
+On Windows/Linux/Mac
+
+Configure AWS CLI
+
+Create your first EC2 instance
+
+Provider: AWS
+
+Resource: aws_instance
+
+Use variables for AMI, instance type, key pair, etc.
+
+Add security group and outputs
+
+Create a aws_security_group
+
+Output EC2 public IP
+
+Manage multiple .tf files
+
+Split provider.tf, variables.tf, resources.tf, outputs.tf
+
+⚙️ PHASE 2: Intermediate Concepts
+🎯 Goal: Learn how Terraform handles state, variables, and environments.
+📘 Concepts
+
+Terraform State
+
+What is a state file
+
+How it tracks real infrastructure
+
+terraform refresh, state show, state rm
+
+State locking
+
+How locking prevents concurrent updates
+
+How remote backends (e.g., S3 + DynamoDB) handle locks
+
+Workspaces
+
+Manage multiple environments (dev, stage, prod)
+
+Variables
+
+Variable types: string, map, list, bool, object
+
+Default values and validations
+
+Expressions
+
+count, for_each, depends_on
+
+Locals
+
+Use for derived variables
+
+Data Sources
+
+Fetch existing resources (e.g., latest AMI ID)
+
+🧪 Labs
+
+Create VPC, Subnets, Route Table, and EC2
+
+Use variables and data sources
+
+Implement workspaces (dev, stage, prod)
+
+Deploy same config in 3 environments
+
+Backend Configuration
+
+Store Terraform state in S3
+
+Enable state locking using DynamoDB
+
+🧱 PHASE 3: Modular Terraform (Reusable Code)
+🎯 Goal: Learn how to structure Terraform for teams & production use
+📘 Concepts
+
+What are modules
+
+Local vs remote modules
+
+Input and output variables in modules
+
+Version pinning for modules
+
+Terraform Registry modules
+
+source attribute (relative paths, GitHub, Terraform Cloud)
+
+🧪 Labs
+
+Create a reusable EC2 module
+
+Inputs: AMI, instance type, tags, key pair
+
+Output: instance ID, public IP
+
+Use this module in main configuration
+
+Call the same EC2 module for multiple environments
+
+Version Control with GitHub
+
+Store modules in separate repos and use with source = "git::https://..."
+
+🛡️ PHASE 4: Advanced Terraform (Production-level)
+🎯 Goal: Make Terraform secure, scalable, and automated
+📘 Concepts
+
+Terraform Cloud & Enterprise
+
+Remote runs
+
+Team access and policies
+
+State Management
+
+terraform import
+
+moved and removed blocks
+
+Lifecycle rules
+
+prevent_destroy
+
+ignore_changes
+
+Dynamic Blocks
+
+Use loops to dynamically generate resources
+
+Provisioners
+
+remote-exec, local-exec, and why they’re discouraged
+
+Terraform Functions
+
+lookup(), merge(), join(), concat(), length(), etc.
+
+Workspaces + Remote Backends
+
+Integrating both properly
+
+Ephemeral Resources
+
+Using the ephemeral block (Terraform 1.6+)
+
+🧪 Labs
+
+Create an autoscaling group with launch templates
+
+Use Terraform with RDS + VPC
+
+Implement prevent_destroy on S3 backend bucket
+
+Use moved block to rename resources safely
+
+🔐 PHASE 5: Integrations & Secrets Management
+🎯 Goal: Integrate Terraform with other HashiCorp tools and secret stores
+📘 Concepts
+
+Vault + Terraform integration
+
+vault_kv_secret_v2
+
+AppRole authentication
+
+Policies and Roles
+
+Using secrets in Terraform variables
+
+Storing state and secrets securely
+
+🧪 Labs
+
+Use Vault AppRole for Terraform
+
+Read a secret and use it in Terraform (you already did this! 🎉)
+
+Encrypt data in S3 using KMS
+
+Rotate credentials via Vault
+
+🧰 PHASE 6: Terraform in CI/CD Pipelines
+🎯 Goal: Automate Terraform using DevOps pipelines
+📘 Concepts
+
+Terraform workflow in CI/CD
+
+Plan → Manual Approval → Apply
+
+Handling state files in CI/CD
+
+Terraform Cloud API tokens
+
+Integration with GitHub Actions, Jenkins, GitLab, Azure DevOps
+
+Using environment variables for secrets
+
+🧪 Labs
+
+GitHub Actions
+
+Run terraform fmt, plan, and apply on PR merge
+
+Jenkins Pipeline
+
+Add Terraform build step
+
+Terraform Cloud workspace automation
+
+🧩 PHASE 7: Advanced Real-Time Projects
+🎯 Goal: Apply everything in production-style deployments
+🧪 Real-Time Projects
+Project	Description	Concepts Used
+1. Multi-Tier AWS App Deployment	Deploy VPC, public/private subnets, ALB, EC2, RDS	Modules, Remote Backend, Workspaces
+2. Terraform + Vault + Jenkins	Securely use secrets from Vault in Jenkins pipeline	Vault Provider, AppRole Auth
+3. Terraform + Kubernetes (EKS)	Deploy EKS cluster and node groups	Data sources, Dynamic Blocks, Remote State
+4. CI/CD Infrastructure Deployment	Terraform pipeline with GitHub Actions	Terraform Cloud, Environments
+5. DR and Rollback with State Management	Restore infra from Terraform state	State Import, Backup, Locking
+🧠 PHASE 8: Expert & Interview Preparation
+📘 Topics to Master
+
+Terraform lifecycle and graph theory
+
+How Terraform performs dependency resolution
+
+Drift detection and reconciliation
+
+Terraform providers internals
+
+Best practices for modules & naming
+
+Cost optimization with Terraform
+
+Managing large teams and multi-account setups
+
+Policy as Code (Sentinel / OPA)
+
+Debugging with TF_LOG=TRACE
+
+📄 Interview Focus Areas
+
+State management and drift handling
+
+Difference between count vs for_each
+
+Backend types (local, remote, etc.)
+
+Terraform vs Ansible vs CloudFormation
+
+Terraform Cloud/Enterprise use cases
+
+Real-world error scenarios
+
+📚 Suggested Resources
+
+Official Docs: https://developer.hashicorp.com/terraform/docs
+
+HashiCorp Learn: https://learn.hashicorp.com/terraform
+
+Books:
+
+Terraform Up and Running (Yevgeniy Brikman)
+
+YouTube Channels:
+
+HashiCorp Official
+
+freeCodeCamp DevOps courses
+
+Certifications:
+
+HashiCorp Certified: Terraform Associate (003 version)
+
+Would you like me to turn this into a structured 30-day learning plan (with daily topics + practicals + checkpoints)?
+That way, you can follow it step by step to become Terraform-proficient in one month.
