@@ -13,7 +13,8 @@ provider "aws" {
 }
 
 module "create_ec2" {
-  source = "git::https://github.com/Prudhviraju-chekuri/Terraform.git//practice/modules/EC2-instance?ref=1ca083c"
+   source = "github.com/Prudhviraju-chekuri/Terraform//practice/modules/EC2-instance"
+#  source = "git::https://github.com/Prudhviraju-chekuri/Terraform.git//practice/modules/EC2-instance?ref=1ca083c"
   ubuntu2204-ami = "ami-0c398cb65a93047f2"
   instance-type = "t3.micro"
   key-name = "mylinux"
