@@ -3,7 +3,7 @@ resource "aws_instance" "variables-ec2" {
     instance_type = var.instance-type
     key_name = var.key-name
     tags = {
-      Name = var.ec2-name
+      Name = "${var.ec2-name}-instance"
     }
  
 }
