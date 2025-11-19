@@ -38,7 +38,7 @@ module "tf-ec2" {
     ubuntu2204-ami = var.ami
     instance-type = lookup(var.instance-type, terraform.workspace, "t3.micro")
     key-name = var.key-name
-    ec2-name =  "${terraform.workspace}-ec2"
+    ec2-name =  "${terraform.workspace}-ec2-instace"
   
 }
 
