@@ -35,6 +35,7 @@ provider "aws" {
   
 } */
 
+# used removed block and destroy to false. the resource ec2 wont be managed by terraform, but wont destroy the real infrastructure.
 removed {
   from = aws_instance.renamed_ec2
   lifecycle {
