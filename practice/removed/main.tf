@@ -52,4 +52,7 @@ resource "aws_instance" "import_ec2" {
   tags = {
     Name = "import-ec2"
   }
+  lifecycle {
+    prevent_destroy = false
+  }
 }
