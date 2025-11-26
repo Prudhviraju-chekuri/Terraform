@@ -43,6 +43,7 @@ resource "aws_s3_bucket" "my-bucket" {
   
 }
 
+
 resource "aws_s3_bucket_lifecycle_configuration" "my-bucket-lifecycle" {
     bucket = "poorvika-storage9989555"
     dynamic "rule" {

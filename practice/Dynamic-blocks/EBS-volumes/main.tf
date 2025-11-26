@@ -32,6 +32,7 @@ variable "ebs_volumes" {
   
 }
 
+
 # if we change volume sizes, terraform is not detecting and saying no changes required.
 /* You used aws_instance with embedded ebs_block_device.
 Terraform does NOT track these volumes separately, meaning:
