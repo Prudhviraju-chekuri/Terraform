@@ -18,7 +18,7 @@ resource "aws_instance" "example" {
     instance_type = "t3.micro"
     key_name = "mylinux"
     tags = {
-      Name = "Tf-cloud-ec2"
+      Name = "Tf-cloud1-ec2"
     }
   
 }
