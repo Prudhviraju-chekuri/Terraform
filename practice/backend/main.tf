@@ -17,6 +17,6 @@ module "tf-ec2" {
     ubuntu2204-ami = "ami-0c398cb65a93047f2"
     instance-type = "t3.micro"
     key-name = "mylinux"
-    ec2-name = "tf-backend-ec2"
+    ec2-name = "tf-backend2-ec2"
   
 }

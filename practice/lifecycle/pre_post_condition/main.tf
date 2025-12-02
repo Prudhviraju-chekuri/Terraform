@@ -1,8 +1,8 @@
 terraform {
   required_providers {
     aws = {
-        source = "hashicorp/aws"
-        version = "~>5.7.0"
+      source  = "hashicorp/aws"
+      version = "~>5.7.0"
     }
   }
 }
@@ -22,11 +22,11 @@ resource "aws_instance" "lifecycle_EC2" {
 
   lifecycle {
     precondition {
-      condition = var.instance_type != "c7i-flex.large"
+      condition     = var.instance_type != "c7i-flex.large"
       error_message = "flex large is too expensive"
     }
     postcondition {
-      condition = self.public_ip != ""
+      condition     = self.public_ip != ""
       error_message = "EC2 did not receive a public IP!"
     }
   }
