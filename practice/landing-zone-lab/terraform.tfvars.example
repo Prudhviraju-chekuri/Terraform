@@ -1,0 +1,5 @@
+aws_region         = "us-east-1"
+environment        = "lab"
+alert_email        = "you@example.com"
+trusted_ip_cidr    = "203.0.113.10/32" # replace with YOUR IP -> https://checkip.amazonaws.com
+enable_nat_gateway = false             # true costs money (~$0.045/hr + data) - keep false for the free lab
